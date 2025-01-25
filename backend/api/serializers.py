@@ -17,11 +17,11 @@ class WorkoutSerializer(serializers.ModelSerializer):
     class Meta:
         model = Workout
         fields = ['id', 'date', 'user']
-        extra_kwargss = {'user': {'read_only': True}} 
+        extra_kwargs = {'user': {'read_only': True}} 
     
 
 class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         fields = ['id', 'workout', 'name', 'sets', 'reps', 'weight']
-        extra_kwargss = {'workout': {'write_only': True}} 
+        extra_kwargs = {'workout': {'read_only': True}} 
